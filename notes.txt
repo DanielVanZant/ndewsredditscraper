@@ -1,0 +1,7 @@
+Gmail Account: ndewsscraper@gmail.com scraperndews
+Reddit account ndewsscraper scraperndews
+Reddit App:
+    -Name: ndewsscraper 
+    -ID: tU0fP5s6U9cR3Q
+    -Secret: yM40wbYvXcaZt9lVRZbJfqUU4vs
+

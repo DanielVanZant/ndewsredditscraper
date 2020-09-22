@@ -1,0 +1,6 @@
+install database (postgresql)
+create database install script
+create script to initialize database
+save comments from stream to database
+create dockerfile and build image
+create scripts to manage docker container

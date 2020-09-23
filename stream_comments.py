@@ -7,10 +7,7 @@ with open("config.json", "r") as config_file:
     
 reddit = praw.Reddit(**config['auth'])
 
-def build_multireddit(sub_list):
-    return "+".join(sub_list)
-
-sub_names = build_multireddit(config['subreddits'])
+sub_names = '+'.join(config['subreddits'])
 subreddit = reddit.subreddit(sub_names)
 
 def parse_comment(comment):

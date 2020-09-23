@@ -109,7 +109,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-ndewsscraper/
+ndewsscrapervenv/
 
 # Spyder project settings
 .spyderproject

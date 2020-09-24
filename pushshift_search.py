@@ -3,6 +3,13 @@ from psaw import PushshiftAPI
 import datetime as dt
 import json
 import os
+import sys
+
+keyword_list = None
+if len(sys.argv) > 1:
+    with open(sys.argv[1], "r") as f:
+        keyword_list = f.read().split("\n")
+
 
 downloads_dir = "downloads/"
 
@@ -35,7 +42,10 @@ end_date = int(dt.datetime(2020, 9, 23).timestamp())
 if not os.path.exists(downloads_dir):
     os.makedirs(downloads_dir)
 
-for keyword in config['keywords']:
+if keyword_list is None:
+    keyword_list = config['keywords']
+
+for keyword in keyword_list:
     print("Starting", keyword)
 
     gen = psapi.search_comments(

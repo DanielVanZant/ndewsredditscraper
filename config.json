@@ -71,11 +71,15 @@
         "mescaline",
         "DPH",
         "PCP",
-        "Opioid_RCs"
+        "Opioid_RCs",
+        "brophine"
     ],
     "keywords": [
         "eutylone",
         "isotonitazene",
-        "238"
+        "238",
+        "methadone",
+        "suboxone",
+        "brorphine"
     ]
 }

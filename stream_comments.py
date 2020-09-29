@@ -2,10 +2,13 @@ import praw
 import json
 import time
 
+with open("auth.json", "r") as auth_file:
+    auth = json.load(auth_file)
+
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
     
-reddit = praw.Reddit(**config['auth'])
+reddit = praw.Reddit(**auth)
 
 sub_names = '+'.join(config['subreddits'])
 subreddit = reddit.subreddit(sub_names)

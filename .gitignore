@@ -5,6 +5,8 @@ __pycache__/
 
 auth.json
 
+datasets/
+
 # C extensions
 *.so
 

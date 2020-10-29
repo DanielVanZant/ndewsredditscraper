@@ -40,7 +40,7 @@ def parse_comment(comment):
     }
 
 start_date = int(dt.datetime(2019, 1, 1).timestamp())
-end_date = int(dt.datetime(2020, 9, 23).timestamp())
+end_date = int(dt.datetime(2020, 10, 7).timestamp())
 
 if not os.path.exists(downloads_dir):
     os.makedirs(downloads_dir)
@@ -48,7 +48,7 @@ if not os.path.exists(downloads_dir):
 if keyword_list is None:
     keyword_list = config['keywords']
 
-for keyword in keyword_list:
+for keyword in ["purple heroin"]:
     print("Starting", keyword)
 
     gen = psapi.search_comments(

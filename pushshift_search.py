@@ -11,7 +11,7 @@ if len(sys.argv) > 1:
         keyword_list = f.read().split("\n")
 
 
-downloads_dir = "downloads/"
+downloads_dir = "nps_downloads/"
 
 with open("auth.json", "r") as auth_file:
     auth = json.load(auth_file)
@@ -39,8 +39,8 @@ def parse_comment(comment):
         "subreddit": comment.subreddit.display_name
     }
 
-start_date = int(dt.datetime(2019, 1, 1).timestamp())
-end_date = int(dt.datetime(2020, 10, 7).timestamp())
+start_date = int(dt.datetime(2010, 1, 1).timestamp())
+end_date = int(dt.datetime(2020, 11, 15).timestamp())
 
 if not os.path.exists(downloads_dir):
     os.makedirs(downloads_dir)
@@ -48,7 +48,18 @@ if not os.path.exists(downloads_dir):
 if keyword_list is None:
     keyword_list = config['keywords']
 
-for keyword in ["purple heroin"]:
+nps_keywords = [
+    "u4", "u-4", "u47", "U-47700", "U-44770", "47700",
+    "carfent", "carfentanil",
+    "isotonitazene",
+    "brorphine",
+    "flualprazolam", "flualp",
+    "N-ethyl-pentylone", "ephylone",
+    "eutylone",
+    "5F-MDMB-PICA"
+]
+
+for keyword in nps_keywords:
     print("Starting", keyword)
 
     gen = psapi.search_comments(

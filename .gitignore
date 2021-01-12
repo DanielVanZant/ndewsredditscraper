@@ -6,6 +6,12 @@ __pycache__/
 auth.json
 
 datasets/
+downloads/
+nps_downloads/
+nps_plots/
+nps_plots_fixed/
+scrapes/
+nps_spreadsheets/
 
 # C extensions
 *.so

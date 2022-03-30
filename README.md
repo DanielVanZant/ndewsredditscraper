@@ -1,2 +1,2 @@
 # ndewsredditscraper
-Collecting and tracking comments and metadata from the (live) Reddit API and (historical) Pushshift API.
+Reddit Keyword Analysis for the National Drug Early Warning System (NDEWS) 

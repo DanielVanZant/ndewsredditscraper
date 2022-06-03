@@ -67,14 +67,15 @@
         "DPH",
         "PCP",
         "Opioid_RCs",
-        "brophine"
-    ],
-    "keywords": [
-        "eutylone",
-        "isotonitazene",
-        "238",
-        "methadone",
-        "suboxone",
-        "brorphine"
+        "OpioidRCs",
+        "CanadaChems",
+        "OpioidAndBenzo_RCs",
+        "altcannabinoids",
+        "AltCannaNoids",
+        "THCP",
+        "delta8",
+        "OpiateChurch",
+        "PressedOpiateChurch",
+        "Benzofamily"
     ]
 }

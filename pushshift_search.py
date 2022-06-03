@@ -36,10 +36,6 @@ start_date = int(dt.datetime(config["start_year"], config["start_month"], config
 #end_date = int(dt.datetime.today().timestamp())
 end_date = int(dt.datetime(config["end_year"], config["end_month"], config["end_day"]).timestamp())
 
-if not os.path.exists(downloads_dir):
-    os.makedirs(downloads_dir)
-
-
 #https://en.m.wikipedia.org/wiki/List_of_designer_drugs
 #https://www.drugsdata.org/ 
 

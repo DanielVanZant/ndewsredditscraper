@@ -4,14 +4,7 @@ import datetime as dt
 import json
 import os
 import sys
-
-keyword_list = None
-if len(sys.argv) > 1:
-    with open(sys.argv[1], "r") as f:
-        keyword_list = f.read().split("\n")
-
-
-downloads_dir = "nps_downloads/"
+from pathlib import Path
 
 with open("auth.json", "r") as auth_file:
     auth = json.load(auth_file)
@@ -26,7 +19,7 @@ sub_names = ','.join(config['subreddits'])
 
 def parse_comment(comment):
     return {
-        #"author": comment.author.name,
+        "author": comment.author.name if comment.author is not None else "[deleted]",
         #"author_fullname": comment.author_fullname,
         #"num_comments": comment.num_comments,
         "body": comment.body,
@@ -39,27 +32,19 @@ def parse_comment(comment):
         "subreddit": comment.subreddit.display_name
     }
 
-start_date = int(dt.datetime(2010, 1, 1).timestamp())
-end_date = int(dt.datetime(2020, 11, 15).timestamp())
+start_date = int(dt.datetime(2019, 1, 1).timestamp())
+end_date = int(dt.datetime.today().timestamp())
 
 if not os.path.exists(downloads_dir):
     os.makedirs(downloads_dir)
 
-if keyword_list is None:
-    keyword_list = config['keywords']
 
-nps_keywords = [
-    "u4", "u-4", "u47", "U-47700", "U-44770", "47700",
-    "carfent", "carfentanil",
-    "isotonitazene",
-    "brorphine",
-    "flualprazolam", "flualp",
-    "N-ethyl-pentylone", "ephylone",
-    "eutylone",
-    "5F-MDMB-PICA"
-]
+#https://en.m.wikipedia.org/wiki/List_of_designer_drugs
+#https://www.drugsdata.org/ 
 
-for keyword in nps_keywords:
+Path(config["save_folder"]).mkdir(exist_ok=True)
+
+for keyword in config['keywords']:
     print("Starting", keyword)
 
     gen = psapi.search_comments(
@@ -71,9 +56,9 @@ for keyword in nps_keywords:
         #frequency="day",
     )
 
-    data = [parse_comment(c) for c in gen]
+    data = [parse_comment(c) for c in gen] 
 
     print("found", len(data), "results")
 
-    with open(os.path.join(downloads_dir, keyword+'.json'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(config["save_folder"], keyword+'.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)

@@ -4,6 +4,13 @@
         "monkeydust",
         "monkey dust"
     ],
+    "start_year": 2019,
+    "start_month": 1,
+    "start_day": 1,
+    "end_year": 2022,
+    "end_month": 6,
+    "end_day": 3,
+    "save_folder": "downloads/",
     "subreddits": [
         "Drugs",
         "Psychonaut",

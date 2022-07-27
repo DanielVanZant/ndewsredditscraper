@@ -30,13 +30,13 @@ def parse_comment(comment):
         #"author_fullname": comment.author_fullname,
         #"num_comments": comment.num_comments,
         "body": comment.body,
-        "created_utc": comment.created_utc,
-        "id": comment.id,
-        "link_id": comment.link_id,
-        "parent_id": comment.parent_id,
-        "score": comment.score,
-        "subreddit_id": comment.subreddit_id,
-        "subreddit": comment.subreddit.display_name
+        #"created_utc": comment.created_utc,
+        #"id": comment.id,
+        #"link_id": comment.link_id,
+        #"parent_id": comment.parent_id,
+        #"score": comment.score,
+        #"subreddit_id": comment.subreddit_id,
+        #"subreddit": comment.subreddit.display_name
     }
 
 start_date = int(dt.datetime(2010, 1, 1).timestamp())

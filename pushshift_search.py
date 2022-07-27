@@ -15,6 +15,7 @@ with open("config.json", "r") as config_file:
 reddit = praw.Reddit(**auth)
 psapi = PushshiftAPI(reddit)
 
+print(type(config['subreddits']))
 sub_names = ','.join(config['subreddits'])
 
 def parse_comment(comment):

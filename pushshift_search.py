@@ -42,12 +42,11 @@ end_date = int(dt.datetime(config["end_year"], config["end_month"], config["end_
 
 Path(config["save_folder"]).mkdir(exist_ok=True)
 
-for keyword in config['keywords']:
-    print("Starting", keyword)
+for reddit in config['subreddits']:
+    print("Starting", reddit)
 
     gen = psapi.search_comments(
-        q=keyword, 
-        subreddit=sub_names,
+        subreddit=reddit,
         after=start_date,
         before=end_date
         #aggs="created_utc",
@@ -58,5 +57,5 @@ for keyword in config['keywords']:
 
     print("found", len(data), "results")
 
-    with open(os.path.join(config["save_folder"], keyword+'.json'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(config["save_folder"], reddit+'.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)

@@ -49,7 +49,7 @@ for reddit in config['subreddits']:
         subreddit=reddit,
         after=start_date,
         before=end_date,
-        fields='body'
+        fields='body','created_utc'
         #aggs="created_utc",
         #frequency="day",
     )

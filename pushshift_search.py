@@ -55,8 +55,10 @@ for reddit in config['subreddits']:
     )
     print(type(gen))
     print(gen)
+    for i in gen:
+        print(i)
 
-    data = list(gen)
+    #data = list(gen)
 
     print("found", len(data), "results")
 

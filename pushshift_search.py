@@ -48,7 +48,8 @@ for reddit in config['subreddits']:
     gen = psapi.search_comments(
         subreddit=reddit,
         after=start_date,
-        before=end_date
+        before=end_date,
+        fields=body
         #aggs="created_utc",
         #frequency="day",
     )

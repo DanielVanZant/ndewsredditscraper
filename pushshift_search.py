@@ -54,7 +54,7 @@ for reddit in config['subreddits']:
         #frequency="day",
     )
 
-    data = [parse_comment(c) for c in gen] 
+    data = gen 
 
     print("found", len(data), "results")
 

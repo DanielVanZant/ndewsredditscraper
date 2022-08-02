@@ -54,7 +54,7 @@ for reddit in config['subreddits']:
         #frequency="day",
     )
 
-    data = gen 
+    data = [comment.body for comment in gen]
 
     print("found", len(data), "results")
 

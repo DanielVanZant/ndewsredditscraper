@@ -48,17 +48,14 @@ for reddit in config['subreddits']:
     gen = psapi.search_comments(
         subreddit=reddit,
         after=start_date,
-        fields='body','created_utc',
-        before=end_date
+        filters='body',
+        #fields=['body','created_utc','id'],
+        before=end_date,
+        limit=10000
         #aggs="created_utc",
         #frequency="day",
     )
-    print(type(gen))
-    print(gen)
-    for i in gen:
-        print(i)
-
-    #data = list(gen)
+    data = [comment.body for comment in gen]
 
     print("found", len(data), "results")
 

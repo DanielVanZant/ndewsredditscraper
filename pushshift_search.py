@@ -53,8 +53,10 @@ for reddit in config['subreddits']:
         #aggs="created_utc",
         #frequency="day",
     )
+    print(type(gen))
+    print(gen)
 
-    data = [comment.body for comment in gen]
+    data = list(gen)
 
     print("found", len(data), "results")
 
